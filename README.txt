@@ -1,3 +1,7 @@
+Just a test mod I'm using for learning MC Modding
+
+
+Original readme follows:
 
 Source installation information for modders
 -------------------------------------------
