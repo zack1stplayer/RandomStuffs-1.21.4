@@ -1,6 +1,7 @@
 package cool.zack1stplayer.RandomStuffs.item;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
