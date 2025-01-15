@@ -22,7 +22,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MY_BLOCK = registerBlock("my_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("my_block"))
-                    .strength(4f)
+                    .strength(4f,4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
             )
