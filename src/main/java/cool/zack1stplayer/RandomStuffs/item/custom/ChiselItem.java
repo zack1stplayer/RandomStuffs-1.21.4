@@ -53,7 +53,8 @@ public class ChiselItem extends Item {
 
         if(CHISEL_MAP.containsKey(clickedBlock)) {
             if(!level.isClientSide()) {
-                level.setBlockAndUpdate(pContext.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+                level.setBlockAndUpdate(pContext.getClickedPos(),
+                        CHISEL_MAP.get(clickedBlock).withPropertiesOf(level.getBlockState(pContext.getClickedPos())));
 
                 pContext.getItemInHand().hurtAndBreak(1,
                         ((ServerLevel) level),
