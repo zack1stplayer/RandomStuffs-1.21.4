@@ -1,11 +1,12 @@
 {
-  "item.randomstuffs.example_item": "Example Item",
-  "item.randomstuffs.reddite_longsword": "Reddite Longsword",
-  "item.randomstuffs.reddite_item": "Reddite",
   "item.randomstuffs.raw_reddite": "Raw Reddite",
+  "item.randomstuffs.reddite_item": "Reddite",
+  "item.randomstuffs.reddite_longsword": "Reddite Longsword",
+
+  "item.randomstuffs.reddite_block": "Reddite Block",
 
   "item.randomstuffs.example_block": "Example Block",
-  "item.randomstuffs.reddite_block": "Reddite Block",
+  "item.randomstuffs.example_item": "Example Item",
 
   "creativetab.randomstuffs.randdomstuffs_items": "Random Stuffs"
 }

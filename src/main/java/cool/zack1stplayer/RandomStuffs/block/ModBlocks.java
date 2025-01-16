@@ -22,7 +22,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> REDDITE_BLOCK = registerBlock("reddite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("reddite_block"))
-                    .strength(4f,4f)
+                    .strength(3f,4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
             )
@@ -32,6 +32,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("example_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("example_block"))
+                    .strength(4f,4f)
+                    .requiresCorrectToolForDrops()
                     .mapColor(MapColor.STONE)
             )
     );
