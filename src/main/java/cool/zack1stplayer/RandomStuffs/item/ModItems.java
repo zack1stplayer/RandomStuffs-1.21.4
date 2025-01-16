@@ -14,10 +14,9 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, RandomStuffsMain.MODID);
 
 
-    public static final RegistryObject<Item> REDDITE_LONGSWORD = ITEMS.register("reddite_longsword",
+    public static final RegistryObject<Item> RAW_REDDITE = ITEMS.register("raw_reddite",
             () -> new Item(new Item.Properties()
-                    .setId(ITEMS.key("reddite_longsword"))
-                    .equippable(EquipmentSlot.byName("mainhand"))
+                    .setId(ITEMS.key("raw_reddite"))
             )
     );
 
@@ -26,6 +25,14 @@ public class ModItems {
                     .setId(ITEMS.key("reddite_item"))
             )
     );
+
+    public static final RegistryObject<Item> REDDITE_LONGSWORD = ITEMS.register("reddite_longsword",
+            () -> new Item(new Item.Properties()
+                    .setId(ITEMS.key("reddite_longsword"))
+                    .equippable(EquipmentSlot.byName("mainhand"))
+            )
+    );
+
 
     // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item",

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "randomstuffs:reddite_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "randomstuffs:reddite_item"
+  }
+}

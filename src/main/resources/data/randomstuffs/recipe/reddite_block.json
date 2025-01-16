@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "r": "randomstuffs:reddite_item"
+  },
+  "pattern": [
+    "rrr",
+    "rrr",
+    "rrr"
+  ],
+  "result": {
+    "count": 1,
+    "id": "randomstuffs:reddite_block"
+  }
+}

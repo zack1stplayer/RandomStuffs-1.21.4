@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "reddite",
+  "ingredient": "randomstuffs:raw_reddite",
+  "result": {
+    "id": "randomstuffs:reddite_item"
+  }
+}

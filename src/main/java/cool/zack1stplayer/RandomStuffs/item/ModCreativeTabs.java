@@ -19,11 +19,14 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.REDDITE_BLOCK.get()))
                     .title(Component.translatable("creativetab.randomstuffs.randdomstuffs_items"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.REDDITE_LONGSWORD.get());
                         output.accept(ModItems.REDDITE_ITEM.get());
-                        output.accept(ModItems.EXAMPLE_ITEM.get());
+                        output.accept(ModItems.RAW_REDDITE.get());
 
                         output.accept(ModBlocks.REDDITE_BLOCK.get());
+
+                        output.accept(ModItems.REDDITE_LONGSWORD.get());
+
+                        output.accept(ModItems.EXAMPLE_ITEM.get());
                         output.accept(ModBlocks.EXAMPLE_BLOCK.get());
                     }).build());
 
