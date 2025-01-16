@@ -19,8 +19,26 @@ public class ChiselItem extends Item {
     private static final Map<Block, Block> CHISEL_MAP =
             Map.ofEntries(
                     Map.entry(Blocks.STONE, Blocks.STONE_BRICKS),
-                    Map.entry(Blocks.END_STONE, Blocks.END_STONE_BRICKS),
-                    Map.entry(Blocks.DEEPSLATE, Blocks.DEEPSLATE_BRICKS)
+                    Map.entry(Blocks.STONE_SLAB, Blocks.STONE_BRICK_SLAB),
+                    Map.entry(Blocks.STONE_STAIRS, Blocks.STONE_BRICK_STAIRS),
+
+                    Map.entry(Blocks.DEEPSLATE, Blocks.DEEPSLATE_BRICKS),
+                    Map.entry(Blocks.COBBLED_DEEPSLATE, Blocks.DEEPSLATE_BRICKS),
+                    Map.entry(Blocks.COBBLED_DEEPSLATE_SLAB, Blocks.DEEPSLATE_BRICK_SLAB),
+                    Map.entry(Blocks.COBBLED_DEEPSLATE_STAIRS, Blocks.DEEPSLATE_BRICK_STAIRS),
+                    Map.entry(Blocks.COBBLED_DEEPSLATE_WALL, Blocks.DEEPSLATE_BRICK_WALL),
+
+                    Map.entry(Blocks.DEEPSLATE_BRICKS, Blocks.POLISHED_DEEPSLATE),
+                    Map.entry(Blocks.DEEPSLATE_BRICK_SLAB, Blocks.POLISHED_DEEPSLATE_SLAB),
+                    Map.entry(Blocks.DEEPSLATE_BRICK_STAIRS, Blocks.POLISHED_DEEPSLATE_STAIRS),
+                    Map.entry(Blocks.DEEPSLATE_BRICK_WALL, Blocks.POLISHED_DEEPSLATE_WALL),
+
+                    Map.entry(Blocks.POLISHED_DEEPSLATE, Blocks.DEEPSLATE_BRICKS),
+                    Map.entry(Blocks.POLISHED_DEEPSLATE_SLAB, Blocks.DEEPSLATE_BRICK_SLAB),
+                    Map.entry(Blocks.POLISHED_DEEPSLATE_STAIRS, Blocks.DEEPSLATE_BRICK_STAIRS),
+                    Map.entry(Blocks.POLISHED_DEEPSLATE_WALL, Blocks.DEEPSLATE_BRICK_WALL),
+
+                    Map.entry(Blocks.END_STONE, Blocks.END_STONE_BRICKS)
             );
 
 

@@ -38,7 +38,7 @@ public class ModItems {
     public static final RegistryObject<Item> CHISEL = ITEMS.register("chisel",
             () ->new ChiselItem(new Item.Properties()
                     .setId(ITEMS.key("chisel"))
-                    .durability(150)
+                    .durability(250)
             )
     );
 
