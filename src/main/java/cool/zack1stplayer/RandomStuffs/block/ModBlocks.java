@@ -23,7 +23,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RADDITE_BLOCK = registerBlock("raddite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("raddite_block"))
-                    .strength(3f,4f)
+                    .strength(5f,6f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
             )
@@ -32,7 +32,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RADDITE_ORE = registerBlock("raddite_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("raddite_ore"))
-                    .strength(4f, 4f)
+                    .strength(3f, 3f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
             )
@@ -41,9 +41,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_RADDITE_ORE = registerBlock("deepslate_raddite_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("deepslate_raddite_ore"))
-                    .strength(5f, 4f)
+                    .strength(4.5f, 3f)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.DEEPSLATE)
             )
     );
 
