@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "randomstuffs:example_block"
+    "randomstuffs:example_block",
+    "randomstuffs:deepslate_raddite_ore"
   ]
 }

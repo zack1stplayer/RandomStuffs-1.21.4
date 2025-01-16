@@ -19,6 +19,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, RandomStuffsMain.MODID);
 
+
     public static final RegistryObject<Block> RADDITE_BLOCK = registerBlock("raddite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("raddite_block"))
@@ -27,6 +28,25 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST)
             )
     );
+
+    public static final RegistryObject<Block> RADDITE_ORE = registerBlock("raddite_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("raddite_ore"))
+                    .strength(4f, 4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+            )
+    );
+
+    public static final RegistryObject<Block> DEEPSLATE_RADDITE_ORE = registerBlock("deepslate_raddite_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("deepslate_raddite_ore"))
+                    .strength(5f, 4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+            )
+    );
+
 
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("example_block",

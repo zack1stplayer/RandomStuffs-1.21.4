@@ -23,6 +23,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.RAW_RADDITE.get());
 
                         output.accept(ModBlocks.RADDITE_BLOCK.get());
+                        output.accept(ModBlocks.RADDITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
                         output.accept(ModItems.RADDITE_LONGSWORD.get());
                         output.accept(ModItems.CHISEL.get());

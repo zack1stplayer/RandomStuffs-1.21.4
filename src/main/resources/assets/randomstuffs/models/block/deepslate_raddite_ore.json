@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "randomstuffs:block/deepslate_raddite_ore"
+  }
+}
