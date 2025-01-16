@@ -19,9 +19,9 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, RandomStuffsMain.MODID);
 
-    public static final RegistryObject<Block> MY_BLOCK = registerBlock("my_block",
+    public static final RegistryObject<Block> REDDITE_BLOCK = registerBlock("reddite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .setId(BLOCKS.key("my_block"))
+                    .setId(BLOCKS.key("reddite_block"))
                     .strength(4f,4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)

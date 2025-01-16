@@ -1,9 +1,10 @@
 {
   "item.randomstuffs.example_item": "Example Item",
   "item.randomstuffs.reddite_longsword": "Reddite Longsword",
+  "item.randomstuffs.reddite_item": "Reddite",
 
   "item.randomstuffs.example_block": "Example Block",
-  "item.randomstuffs.my_block": "My Block",
+  "item.randomstuffs.reddite_block": "Reddite Block",
 
   "creativetab.randomstuffs.randdomstuffs_items": "Random Stuffs"
 }
