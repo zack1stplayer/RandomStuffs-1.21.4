@@ -46,6 +46,6 @@ public class ChiselItem extends Item {
             }
         }
 
-        return super.useOn(pContext);
+        return InteractionResult.SUCCESS;
     }
 }
