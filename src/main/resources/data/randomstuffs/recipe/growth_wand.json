@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": "minecraft:moss_block",
+    "b": "minecraft:bone_meal",
+    "r": "randomstuffs:reddite_item",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    " bm",
+    " rb",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "randomstuffs:growth_wand"
+  }
+}

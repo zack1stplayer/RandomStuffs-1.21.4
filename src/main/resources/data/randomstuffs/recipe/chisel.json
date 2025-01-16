@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": "#minecraft:iron_tool_materials",
+    "r": "randomstuffs:reddite_item",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  i",
+    " r ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "randomstuffs:chisel"
+  }
+}
