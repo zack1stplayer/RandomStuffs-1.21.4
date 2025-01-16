@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
+    "randomstuffs:example_block",
     "randomstuffs:raddite_block",
-    "randomstuffs:example_block"
+    "randrandomstuffs:raddite_ore",
+    "randrandomstuffs:deepslate_raddite_ore"
   ]
 }
