@@ -16,15 +16,17 @@ public class ModCreativeTabs {
 
 
     public static final RegistryObject<CreativeModeTab> RANDOMSTUFFS_ITEMS_TAB = CREATIVE_MODE_TABS.register("randomstuffs_items_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.REDDITE_BLOCK.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RADDITE_BLOCK.get()))
                     .title(Component.translatable("creativetab.randomstuffs.randdomstuffs_items"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.REDDITE_ITEM.get());
-                        output.accept(ModItems.RAW_REDDITE.get());
+                        output.accept(ModItems.RADDITE.get());
+                        output.accept(ModItems.RAW_RADDITE.get());
 
-                        output.accept(ModBlocks.REDDITE_BLOCK.get());
+                        output.accept(ModBlocks.RADDITE_BLOCK.get());
 
-                        output.accept(ModItems.REDDITE_LONGSWORD.get());
+                        output.accept(ModItems.RADDITE_LONGSWORD.get());
+                        output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.GROWTH_WAND.get());
 
                         output.accept(ModItems.EXAMPLE_ITEM.get());
                         output.accept(ModBlocks.EXAMPLE_BLOCK.get());

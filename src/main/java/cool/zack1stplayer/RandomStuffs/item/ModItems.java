@@ -1,6 +1,8 @@
 package cool.zack1stplayer.RandomStuffs.item;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.item.custom.ChiselItem;
+import cool.zack1stplayer.RandomStuffs.item.custom.GrowthItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -14,22 +16,36 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, RandomStuffsMain.MODID);
 
 
-    public static final RegistryObject<Item> RAW_REDDITE = ITEMS.register("raw_reddite",
+    public static final RegistryObject<Item> RAW_RADDITE = ITEMS.register("raw_raddite",
             () -> new Item(new Item.Properties()
-                    .setId(ITEMS.key("raw_reddite"))
+                    .setId(ITEMS.key("raw_raddite"))
             )
     );
 
-    public static final RegistryObject<Item> REDDITE_ITEM = ITEMS.register("reddite_item",
+    public static final RegistryObject<Item> RADDITE = ITEMS.register("raddite",
             () -> new Item(new Item.Properties()
-                    .setId(ITEMS.key("reddite_item"))
+                    .setId(ITEMS.key("raddite"))
             )
     );
 
-    public static final RegistryObject<Item> REDDITE_LONGSWORD = ITEMS.register("reddite_longsword",
+    public static final RegistryObject<Item> RADDITE_LONGSWORD = ITEMS.register("raddite_longsword",
             () -> new Item(new Item.Properties()
-                    .setId(ITEMS.key("reddite_longsword"))
+                    .setId(ITEMS.key("raddite_longsword"))
                     .equippable(EquipmentSlot.byName("mainhand"))
+            )
+    );
+
+    public static final RegistryObject<Item> CHISEL = ITEMS.register("chisel",
+            () ->new ChiselItem(new Item.Properties()
+                    .setId(ITEMS.key("chisel"))
+                    .durability(150)
+            )
+    );
+
+    public static final RegistryObject<Item> GROWTH_WAND = ITEMS.register("growth_wand",
+            () ->new GrowthItem(new Item.Properties()
+                    .setId(ITEMS.key("growth_wand"))
+                    .durability(250)
             )
     );
 

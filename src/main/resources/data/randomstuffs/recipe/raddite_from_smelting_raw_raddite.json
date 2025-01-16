@@ -3,9 +3,9 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.25,
-  "group": "reddite",
-  "ingredient": "randomstuffs:raw_reddite",
+  "group": "raddite",
+  "ingredient": "randomstuffs:raw_raddite",
   "result": {
-    "id": "randomstuffs:reddite_item"
+    "id": "randomstuffs:raddite"
   }
 }

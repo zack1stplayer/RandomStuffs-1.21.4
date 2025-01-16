@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "r": "randomstuffs:reddite_item"
+    "r": "randomstuffs:raddite"
   },
   "pattern": [
     "rrr",
@@ -11,6 +11,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "randomstuffs:reddite_block"
+    "id": "randomstuffs:raddite_block"
   }
 }

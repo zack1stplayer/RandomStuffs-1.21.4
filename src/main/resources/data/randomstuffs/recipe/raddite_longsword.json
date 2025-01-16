@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "r": "randomstuffs:reddite_item",
+    "r": "randomstuffs:raddite",
     "s": "minecraft:stick"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "randomstuffs:reddite_longsword"
+    "id": "randomstuffs:raddite_longsword"
   }
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "randomstuffs:reddite_block"
+          "name": "randomstuffs:raddite_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "randomstuffs:blocks/reddite_block"
+  "random_sequence": "randomstuffs:blocks/raddite_block"
 }

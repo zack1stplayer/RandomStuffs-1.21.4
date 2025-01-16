@@ -1,9 +1,11 @@
 {
-  "item.randomstuffs.raw_reddite": "Raw Reddite",
-  "item.randomstuffs.reddite_item": "Reddite",
-  "item.randomstuffs.reddite_longsword": "Reddite Longsword",
+  "item.randomstuffs.raw_raddite": "Raw Raddite",
+  "item.randomstuffs.raddite": "Raddite",
+  "item.randomstuffs.raddite_longsword": "Raddite Longsword",
+  "item.randomstuffs.chisel": "Chisel",
+  "item.randomstuffs.growth_wand": "Growth Wand",
 
-  "item.randomstuffs.reddite_block": "Reddite Block",
+  "item.randomstuffs.raddite_block": "Raddite Block",
 
   "item.randomstuffs.example_block": "Example Block",
   "item.randomstuffs.example_item": "Example Item",
