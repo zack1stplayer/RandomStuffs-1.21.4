@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "minecraft:deepslate_raddite_ore"
+              "name": "randomstuffs:deepslate_raddite_ore"
             },
             {
               "type": "minecraft:item",
@@ -49,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:raw_raddite"
+              "name": "randomstuffs:raw_raddite"
             }
           ]
         }
