@@ -1,6 +1,7 @@
 package cool.zack1stplayer.RandomStuffs.block;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.block.custom.MusicalBlock;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -55,6 +56,16 @@ public class ModBlocks {
                     .strength(4f,4f)
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.STONE)
+            )
+    );
+
+    // Musical Block, WIP
+    public static final RegistryObject<Block> CHIME = registerBlock("chime",
+            () -> new MusicalBlock(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("chime"))
+                    .strength(2.5f, 3f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.AMETHYST)
             )
     );
 

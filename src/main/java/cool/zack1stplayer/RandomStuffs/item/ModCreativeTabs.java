@@ -30,6 +30,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CHISEL.get());
                         output.accept(ModItems.GROWTH_WAND.get());
 
+                        output.accept(ModBlocks.CHIME.get());
+
                         output.accept(ModItems.EXAMPLE_ITEM.get());
                         output.accept(ModBlocks.EXAMPLE_BLOCK.get());
                     }).build());
