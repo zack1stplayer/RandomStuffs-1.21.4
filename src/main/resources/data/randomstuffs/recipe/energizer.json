@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "r": "randomstuffs:raddite",
+    "R": "minecraft:redstone_block",
+    "c": "minecraft:copper_ingot",
+    "C": "#minecraft:stone_crafting_materials"
+  },
+  "pattern": [
+    "rrr",
+    "CRC",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "randomstuffs:energizer"
+  }
+}
