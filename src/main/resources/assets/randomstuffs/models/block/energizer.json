@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "randomstuffs:block/energizer/energizer_top",
+    "side": "randomstuffs:block/energizer/energizer_side",
+    "bottom": "randomstuffs:block/energizer/energizer_bottom"
+  }
+}

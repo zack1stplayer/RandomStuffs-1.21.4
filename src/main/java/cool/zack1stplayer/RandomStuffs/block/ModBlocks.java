@@ -1,6 +1,7 @@
 package cool.zack1stplayer.RandomStuffs.block;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.block.custom.EnergizerBlock;
 import cool.zack1stplayer.RandomStuffs.block.custom.MusicalBlock;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -21,6 +22,15 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, RandomStuffsMain.MODID);
 
 
+    public static final RegistryObject<Block> ENERGIZER = registerBlock("energizer",
+            () -> new EnergizerBlock(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("energizer"))
+                    .strength(5f,6f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.COPPER)
+            )
+    );
+
     public static final RegistryObject<Block> RADDITE_BLOCK = registerBlock("raddite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("raddite_block"))
@@ -36,6 +46,7 @@ public class ModBlocks {
                     .strength(3f, 3f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
+                    .lightLevel(p_220871_ -> 3)
             )
     );
 
@@ -45,6 +56,7 @@ public class ModBlocks {
                     .strength(4.5f, 3f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE)
+                    .lightLevel(p_220871_ -> 3)
             )
     );
 
@@ -65,7 +77,7 @@ public class ModBlocks {
                     .setId(BLOCKS.key("chime"))
                     .strength(2.5f, 3f)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.AMETHYST)
+                    .sound(SoundType.WOOD)
             )
     );
 

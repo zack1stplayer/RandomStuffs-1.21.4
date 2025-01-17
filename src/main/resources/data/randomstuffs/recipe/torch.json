@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "randomstuffs:energized_coal",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "c",
+    "s"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:torch"
+  }
+}

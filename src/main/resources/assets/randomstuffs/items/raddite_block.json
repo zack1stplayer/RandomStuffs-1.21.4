@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "randomstuffs:item/raddite_block"
+    "model": "randomstuffs:block/raddite_block"
   }
 }

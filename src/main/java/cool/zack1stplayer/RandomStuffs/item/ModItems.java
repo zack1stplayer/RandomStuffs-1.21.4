@@ -2,6 +2,7 @@ package cool.zack1stplayer.RandomStuffs.item;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
 import cool.zack1stplayer.RandomStuffs.item.custom.ChiselItem;
+import cool.zack1stplayer.RandomStuffs.item.custom.FuelItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.GrowthItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
@@ -26,6 +27,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .setId(ITEMS.key("raddite"))
             )
+    );
+
+    public static final RegistryObject<Item> ENERGIZED_COAL = ITEMS.register("energized_coal",
+            () -> new FuelItem(new Item.Properties()
+                    .setId(ITEMS.key("energized_coal"))
+                    , 3200
+            )   // Coal's burnTime is 1600
     );
 
     public static final RegistryObject<Item> RADDITE_LONGSWORD = ITEMS.register("raddite_longsword",

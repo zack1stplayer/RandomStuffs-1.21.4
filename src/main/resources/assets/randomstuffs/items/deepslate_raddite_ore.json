@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "randomstuffs:item/deepslate_raddite_ore"
+    "model": "randomstuffs:block/deepslate_raddite_ore"
   }
 }

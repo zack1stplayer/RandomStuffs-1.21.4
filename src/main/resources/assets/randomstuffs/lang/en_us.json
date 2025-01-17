@@ -1,9 +1,13 @@
 {
+  "item.randomstuffs.energized_coal": "Energized Coal",
   "item.randomstuffs.raw_raddite": "Raw Raddite",
   "item.randomstuffs.raddite": "Raddite",
+
   "item.randomstuffs.raddite_longsword": "Raddite Longsword",
   "item.randomstuffs.chisel": "Chisel",
   "item.randomstuffs.growth_wand": "Growth Wand",
+
+  "item.randomstuffs.energizer": "Energizer",
 
   "item.randomstuffs.raddite_block": "Raddite Block",
   "item.randomstuffs.raddite_ore": "Raddite Ore",

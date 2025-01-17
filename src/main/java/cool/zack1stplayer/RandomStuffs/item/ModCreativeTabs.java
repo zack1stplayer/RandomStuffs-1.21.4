@@ -26,6 +26,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.RADDITE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
+                        output.accept(ModBlocks.ENERGIZER.get());
+
                         output.accept(ModItems.RADDITE_LONGSWORD.get());
                         output.accept(ModItems.CHISEL.get());
                         output.accept(ModItems.GROWTH_WAND.get());
