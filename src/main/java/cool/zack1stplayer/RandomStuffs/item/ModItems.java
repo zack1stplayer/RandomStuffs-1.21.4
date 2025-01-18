@@ -36,6 +36,13 @@ public class ModItems {
             )   // Coal's burnTime is 1600
     );
 
+    public static final RegistryObject<Item> ENERGIZED_CHARCOAL = ITEMS.register("energized_charcoal",
+            () -> new FuelItem(new Item.Properties()
+                    .setId(ITEMS.key("energized_charcoal"))
+                    , 2400
+            )   // Coal's burnTime is 1600
+    );
+
     public static final RegistryObject<Item> RADDITE_LONGSWORD = ITEMS.register("raddite_longsword",
             () -> new Item(new Item.Properties()
                     .setId(ITEMS.key("raddite_longsword"))

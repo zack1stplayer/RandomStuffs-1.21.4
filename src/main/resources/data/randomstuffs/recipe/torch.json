@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "c": "randomstuffs:energized_coal",
+    "c": "#randomstuffs:energized_fuel",
     "s": "minecraft:stick"
   },
   "pattern": [

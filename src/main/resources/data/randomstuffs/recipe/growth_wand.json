@@ -1,11 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "equipment",
   "key": {
     "m": "minecraft:moss_block",
     "b": "minecraft:bone_meal",
     "r": "randomstuffs:reddite_item",
-    "s": "minecraft:stick"
+    "s": "#c:rods/wooden"
   },
   "pattern": [
     " bm",
