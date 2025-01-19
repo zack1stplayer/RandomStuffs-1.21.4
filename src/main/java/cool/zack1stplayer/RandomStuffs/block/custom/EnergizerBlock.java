@@ -38,6 +38,7 @@ public class EnergizerBlock extends Block {
                     Energizing = true;
                     if (itemEntity.getAge() >= 240) {
                         itemEntity.setItem(new ItemStack(ModItems.ENERGIZED_CHARCOAL.get(), itemEntity.getItem().getCount()));
+                        System.out.println(itemEntity.getItem().getItem());
                     }
                     break;
                 }

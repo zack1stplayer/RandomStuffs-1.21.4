@@ -1,4 +1,4 @@
-package cool.zack1stplayer.RandomStuffs.datagen;
+package cool.zack1stplayer.RandomStuffs.datagen.backup;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
