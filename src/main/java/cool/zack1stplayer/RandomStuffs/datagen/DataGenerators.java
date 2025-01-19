@@ -38,9 +38,11 @@ public class DataGenerators {
         // Recipes
         generator.addProvider(event.includeServer(), new ModRecipeProvider.Runner(packOutput, lookupProvider));
 
-        // Block Models
+        // Block & Item Models
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        // Item Models
+
+
+        // Legacy Item Models
 //        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
     }
 }

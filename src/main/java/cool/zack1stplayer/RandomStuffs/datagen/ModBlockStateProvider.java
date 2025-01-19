@@ -8,7 +8,6 @@ import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.BlockStateGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelInstance;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.renderer.item.ClientItem;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.data.CachedOutput;
@@ -57,6 +56,7 @@ public class ModBlockStateProvider implements DataProvider {
 
         modelprovider$blockstategeneratorcollector.validate();
         modelprovider$iteminfocollector.finalizeAndValidate();
+
         return CompletableFuture.allOf(
                 modelprovider$blockstategeneratorcollector.save(cachedOutput, this.blockStatePathProvider),
                 modelprovider$simplemodelcollector.save(cachedOutput, this.modelPathProvider),
@@ -107,7 +107,6 @@ public class ModBlockStateProvider implements DataProvider {
         public void accept(BlockStateGenerator p_378147_) {
             Block block = p_378147_.getBlock();
             BlockStateGenerator blockstategenerator = this.generators.put(block, p_378147_);
-            System.out.println(block);
             if (blockstategenerator != null) {
                 throw new IllegalStateException("Duplicate blockstate definition for " + block);
             }
@@ -124,7 +123,7 @@ public class ModBlockStateProvider implements DataProvider {
         }
 
         public CompletableFuture<?> save(CachedOutput p_377986_, PackOutput.PathProvider p_377969_) {
-            return ModBlockStateProvider.saveAll(p_377986_, p_378541_ -> p_377969_.json(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, p_378541_.getDescriptionId())), this.generators);
+            return ModBlockStateProvider.saveAll(p_377986_, p_378541_ -> p_377969_.json(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, p_378541_.asItem().getDescriptionId())), this.generators);
         }
     }
 
@@ -168,15 +167,23 @@ public class ModBlockStateProvider implements DataProvider {
         }
 
         public void generateDefaultBlockModels() {
-            ModBlocks.BLOCKS.getEntries().stream().map(p_378629_ -> {
-                if (!this.copies.containsKey(p_378629_.get().asItem())) {
-                    if (p_378629_.get().asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
+            System.out.println("Default Models Called");
+
+            Stream<Block> tStream = ModBlocks.BLOCKS.getEntries().stream()
+                    .map(RegistryObject::get);
+
+            tStream.forEach(p_378629_ -> {
+                System.out.println(this.copies);
+                if (!this.copies.containsKey(p_378629_.asItem())) {
+                    System.out.println("!this.copies.containsKey(p_378629_.get().asItem())");
+                    if (p_378629_.asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
+                        System.out.println("p_378629_.get().asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)");
                         ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, blockitem.getDescriptionId());
                         this.accept(blockitem, ItemModelUtils.plainModel(resourcelocation));
                     }
                 }
-                return null;
             });
+            System.out.println("Test");
         }
 
         public void finalizeAndValidate() {
@@ -188,6 +195,7 @@ public class ModBlockStateProvider implements DataProvider {
                     this.register(p_376289_, clientitem);
                 }
             });
+
             List<String> list = known.get()
                     .map(RegistryObject::get)
                     .filter(p_377225_ -> !this.itemInfos.containsKey(p_377225_))

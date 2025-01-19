@@ -50,13 +50,14 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RADDITE_ORE.get());
         this.createTrivialCube(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
-        this.createTrivialBlock(ModBlocks.ENERGIZER.get(), TexturedModel.COLUMN);
+        this.createTrivialBlock(ModBlocks.ENERGIZER.get(), TexturedModel.CUBE_TOP_BOTTOM);
 
         this.createTrivialCube(ModBlocks.EXAMPLE_BLOCK.get());
         this.createTrivialCube(ModBlocks.CHIME.get());
 
 
-        if (this.itemModelOutput instanceof ModBlockStateProvider.ItemInfoCollector collector)
+        if (this.itemModelOutput instanceof ModBlockStateProvider.ItemInfoCollector collector) {
             collector.generateDefaultBlockModels();
+        }
     }
 }
