@@ -4,8 +4,6 @@ import com.google.gson.JsonElement;
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
 import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
-import net.minecraft.client.data.models.BlockModelGenerators;
-import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.BlockStateGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
@@ -13,7 +11,6 @@ import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.renderer.item.ClientItem;
 import net.minecraft.client.renderer.item.ItemModel;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -54,8 +51,10 @@ public class ModBlockStateProvider implements DataProvider {
         ModBlockStateProvider.ItemInfoCollector modelprovider$iteminfocollector = new ModBlockStateProvider.ItemInfoCollector(this::getKnownItems);
         ModBlockStateProvider.BlockStateGeneratorCollector modelprovider$blockstategeneratorcollector = new ModBlockStateProvider.BlockStateGeneratorCollector(this::getKnownBlocks);
         ModBlockStateProvider.SimpleModelCollector modelprovider$simplemodelcollector = new ModBlockStateProvider.SimpleModelCollector();
+
         getBlockModelGenerators(modelprovider$blockstategeneratorcollector, modelprovider$iteminfocollector, modelprovider$simplemodelcollector).run();
         getItemModelGenerators(modelprovider$iteminfocollector, modelprovider$simplemodelcollector).run();
+
         modelprovider$blockstategeneratorcollector.validate();
         modelprovider$iteminfocollector.finalizeAndValidate();
         return CompletableFuture.allOf(
@@ -73,12 +72,12 @@ public class ModBlockStateProvider implements DataProvider {
         return ModItems.ITEMS.getEntries().stream();
     }
 
-    protected BlockModelGenerators getBlockModelGenerators(ModBlockStateProvider.BlockStateGeneratorCollector blocks, ModBlockStateProvider.ItemInfoCollector items, ModBlockStateProvider.SimpleModelCollector models) {
-        return new BlockModelGenerators(blocks, items, models);
+    protected ModBlockModelGenerators getBlockModelGenerators(ModBlockStateProvider.BlockStateGeneratorCollector blocks, ModBlockStateProvider.ItemInfoCollector items, ModBlockStateProvider.SimpleModelCollector models) {
+        return new ModBlockModelGenerators(blocks, items, models);
     }
 
-    protected ItemModelGenerators getItemModelGenerators(ModBlockStateProvider.ItemInfoCollector items, ModBlockStateProvider.SimpleModelCollector models) {
-        return new ItemModelGenerators(items, models);
+    protected ModItemModelGenerators getItemModelGenerators(ModBlockStateProvider.ItemInfoCollector items, ModBlockStateProvider.SimpleModelCollector models) {
+        return new ModItemModelGenerators(items, models);
     }
 
     static <T> CompletableFuture<?> saveAll(CachedOutput cachedOutput, Function<T, Path> pathFunction, Map<T, ? extends Supplier<JsonElement>> tgen) {
@@ -108,6 +107,7 @@ public class ModBlockStateProvider implements DataProvider {
         public void accept(BlockStateGenerator p_378147_) {
             Block block = p_378147_.getBlock();
             BlockStateGenerator blockstategenerator = this.generators.put(block, p_378147_);
+            System.out.println(block);
             if (blockstategenerator != null) {
                 throw new IllegalStateException("Duplicate blockstate definition for " + block);
             }
@@ -168,13 +168,14 @@ public class ModBlockStateProvider implements DataProvider {
         }
 
         public void generateDefaultBlockModels() {
-            BuiltInRegistries.ITEM.forEach(p_378629_ -> {
-                if (!this.copies.containsKey(p_378629_)) {
-                    if (p_378629_ instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
-                        ResourceLocation resourcelocation = ModelLocationUtils.getModelLocation(blockitem.getBlock());
+            ModBlocks.BLOCKS.getEntries().stream().map(p_378629_ -> {
+                if (!this.copies.containsKey(p_378629_.get().asItem())) {
+                    if (p_378629_.get().asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
+                        ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, blockitem.getDescriptionId());
                         this.accept(blockitem, ItemModelUtils.plainModel(resourcelocation));
                     }
                 }
+                return null;
             });
         }
 
