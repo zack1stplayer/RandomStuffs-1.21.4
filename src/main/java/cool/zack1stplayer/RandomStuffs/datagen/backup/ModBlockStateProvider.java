@@ -1,3 +1,4 @@
+/*
 package cool.zack1stplayer.RandomStuffs.datagen.backup;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
@@ -29,3 +30,4 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 }
+*/

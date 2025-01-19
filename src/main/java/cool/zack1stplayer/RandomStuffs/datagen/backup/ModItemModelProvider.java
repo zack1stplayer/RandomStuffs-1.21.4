@@ -1,3 +1,4 @@
+/*
 package cool.zack1stplayer.RandomStuffs.datagen.backup;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
@@ -25,3 +26,4 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.EXAMPLE_ITEM.get());
     }
 }
+*/
