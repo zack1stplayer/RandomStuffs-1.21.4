@@ -37,6 +37,14 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CHISEL.get());
                         output.accept(ModItems.GROWTH_WAND.get());
 
+
+                        // VANILLA ALT ITEMS
+                        output.accept(ModBlocks.HONEYCOMB_STAIRS.get());
+                        output.accept(ModBlocks.HONEYCOMB_SLAB.get());
+                        output.accept(ModBlocks.HONEYCOMB_TRAPDOOR.get());
+
+
+                        // WIP ITEMS
                         output.accept(ModBlocks.CHIME.get());
 
                         output.accept(ModItems.EXAMPLE_ITEM.get());

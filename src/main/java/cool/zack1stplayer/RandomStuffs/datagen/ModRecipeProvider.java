@@ -18,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -113,13 +114,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(this.output);
 
 
+//  STONECUTTER RECIPES
+        // Honeycomb Stairs
+
+
 //  SMELTING RECIPES
         // Raddite from smelting Raw Raddite
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(
                 ModItems.RAW_RADDITE.get()), RecipeCategory.MISC,
                 ModItems.RAW_RADDITE.get(), 0.45f, 200)
                 .unlockedBy(ModItems.RAW_RADDITE.get().toString(), has(ModItems.RAW_RADDITE.get()))
-                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_smelting");
+                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_smelting_raw_raddite");
 
 
 //  BLASTING RECIPES
@@ -128,7 +133,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.RAW_RADDITE.get()), RecipeCategory.MISC,
                 ModItems.RAW_RADDITE.get(), 0.45f, 100)
                 .unlockedBy(ModItems.RAW_RADDITE.get().toString(), has(ModItems.RAW_RADDITE.get()))
-                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_blasting");
+                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_blasting_raw_raddite");
     }
 
 

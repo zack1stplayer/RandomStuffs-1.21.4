@@ -6,9 +6,9 @@ import cool.zack1stplayer.RandomStuffs.block.custom.MusicalBlock;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,13 +21,14 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, RandomStuffsMain.MODID);
 
-
+// MODBLOCKS
     public static final RegistryObject<Block> ENERGIZER = registerBlock("energizer",
             () -> new EnergizerBlock(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("energizer"))
                     .strength(5f,6f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.COPPER)
+                    .mapColor(MapColor.COLOR_RED)
             )
     );
 
@@ -37,6 +38,7 @@ public class ModBlocks {
                     .strength(5f,6f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
+                    .mapColor(MapColor.COLOR_RED)
             )
     );
 
@@ -47,6 +49,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
                     .lightLevel(p_220871_ -> 3)
+                    .mapColor(MapColor.STONE)
             )
     );
 
@@ -57,10 +60,31 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE)
                     .lightLevel(p_220871_ -> 3)
+                    .mapColor(MapColor.DEEPSLATE)
             )
     );
 
+// VANILLA ALT BLOCKS
+    public static final RegistryObject<StairBlock> HONEYCOMB_STAIRS = registerBlock("honeycomb_stairs",
+        () -> new StairBlock(Blocks.HONEYCOMB_BLOCK.defaultBlockState(),
+                BlockBehaviour.Properties.of()
+                        .setId(BLOCKS.key("honeycomb_stairs")).mapColor(MapColor.COLOR_ORANGE)
+                        .strength(0.6F).sound(SoundType.CORAL_BLOCK))
+    );
 
+    public static final RegistryObject<SlabBlock> HONEYCOMB_SLAB = registerBlock("honeycomb_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("honeycomb_slab")).mapColor(MapColor.COLOR_ORANGE)
+                    .strength(0.6F).sound(SoundType.CORAL_BLOCK))
+    );
+
+    public static final RegistryObject<TrapDoorBlock> HONEYCOMB_TRAPDOOR = registerBlock("honeycomb_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.ACACIA, BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("honeycomb_trapdoor")).mapColor(MapColor.COLOR_ORANGE)
+                    .strength(0.6F).sound(SoundType.CORAL_BLOCK).noOcclusion())
+    );
+
+// WIP BLOCKS
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("example_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -75,9 +99,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHIME = registerBlock("chime",
             () -> new MusicalBlock(BlockBehaviour.Properties.of()
                     .setId(BLOCKS.key("chime"))
-                    .strength(2.5f, 3f)
+                    .strength(0.8f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)
+                    .mapColor(MapColor.WOOD)
             )
     );
 

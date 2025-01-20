@@ -28,10 +28,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.EXAMPLE_BLOCK.get());
         dropSelf(ModBlocks.RADDITE_BLOCK.get());
         dropSelf(ModBlocks.ENERGIZER.get());
-        dropSelf(ModBlocks.CHIME.get());
 
         this.add(ModBlocks.RADDITE_ORE.get(),
                 block -> createMultiOreDrops(ModBlocks.RADDITE_ORE.get(), ModItems.RAW_RADDITE.get(),
@@ -41,6 +39,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createMultiOreDrops(ModBlocks.DEEPSLATE_RADDITE_ORE.get(), ModItems.RAW_RADDITE.get(),
                         2.0f, 5.0f)
         );
+
+        // VANILLA ALT BLOCKS
+        dropSelf(ModBlocks.HONEYCOMB_STAIRS.get());
+        dropSelf(ModBlocks.HONEYCOMB_SLAB.get());
+        dropSelf(ModBlocks.HONEYCOMB_TRAPDOOR.get());
+
+        // WIP BLOCKS
+        dropSelf(ModBlocks.CHIME.get());
+        dropSelf(ModBlocks.EXAMPLE_BLOCK.get());
     }
 
     protected LootTable.Builder createMultiOreDrops(Block pBlock, Item pItem, float minDrops, float maxDrops) {

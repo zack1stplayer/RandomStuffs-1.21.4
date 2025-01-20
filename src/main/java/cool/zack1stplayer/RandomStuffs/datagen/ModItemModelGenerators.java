@@ -8,7 +8,6 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class ModItemModelGenerators extends ItemModelGenerators {
     public ModItemModelGenerators(ItemModelOutput p_375677_, BiConsumer<ResourceLocation, ModelInstance> p_377569_) {

@@ -123,7 +123,8 @@ public class ModBlockStateProvider implements DataProvider {
         }
 
         public CompletableFuture<?> save(CachedOutput p_377986_, PackOutput.PathProvider p_377969_) {
-            return ModBlockStateProvider.saveAll(p_377986_, p_378541_ -> p_377969_.json(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, p_378541_.asItem().getDescriptionId())), this.generators);
+            return ModBlockStateProvider.saveAll(p_377986_, p_378541_ -> p_377969_.json(ResourceLocation
+                    .fromNamespaceAndPath(RandomStuffsMain.MODID, p_378541_.asItem().toString().substring(13))), this.generators);
         }
     }
 
@@ -167,23 +168,16 @@ public class ModBlockStateProvider implements DataProvider {
         }
 
         public void generateDefaultBlockModels() {
-            System.out.println("Default Models Called");
-
             Stream<Block> tStream = ModBlocks.BLOCKS.getEntries().stream()
                     .map(RegistryObject::get);
-
-            tStream.forEach(p_378629_ -> {
-                System.out.println(this.copies);
-                if (!this.copies.containsKey(p_378629_.asItem())) {
-                    System.out.println("!this.copies.containsKey(p_378629_.get().asItem())");
-                    if (p_378629_.asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
-                        System.out.println("p_378629_.get().asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)");
-                        ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, blockitem.getDescriptionId());
+            tStream.forEach(block -> {
+                if (!this.copies.containsKey(block.asItem())) {
+                    if (block.asItem() instanceof BlockItem blockitem && !this.itemInfos.containsKey(blockitem)) {
+                        ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, "block/" + blockitem.toString().substring(13));
                         this.accept(blockitem, ItemModelUtils.plainModel(resourcelocation));
                     }
                 }
             });
-            System.out.println("Test");
         }
 
         public void finalizeAndValidate() {
@@ -208,7 +202,7 @@ public class ModBlockStateProvider implements DataProvider {
 
         public CompletableFuture<?> save(CachedOutput p_378568_, PackOutput.PathProvider p_377933_) {
             return DataProvider.saveAll(
-                    p_378568_, ClientItem.CODEC, p_377091_ -> p_377933_.json(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, p_377091_.getDescriptionId())), this.itemInfos
+                    p_378568_, ClientItem.CODEC, p_377091_ -> p_377933_.json(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, p_377091_.toString().substring(13))), this.itemInfos
             );
         }
     }
