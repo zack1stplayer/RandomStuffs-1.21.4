@@ -18,7 +18,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -106,6 +107,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(this.output);
 
 
+        // VANILLA ALT RECIPES
+        // Honeycomb Slab
+        ShapedRecipeBuilder.shaped(this.items, RecipeCategory.MISC, ModBlocks.HONEYCOMB_SLAB.get(),1)
+                .pattern("rrr")
+                .define('r', Blocks.HONEYCOMB_BLOCK)
+                .unlockedBy(Blocks.HONEYCOMB_BLOCK.toString(), has(Blocks.HONEYCOMB_BLOCK))
+                .save(this.output);
+
+        // Honeycomb Stairs
+        ShapedRecipeBuilder.shaped(this.items, RecipeCategory.MISC, ModBlocks.HONEYCOMB_STAIRS.get(),1)
+                .pattern("r  ")
+                .pattern("rr ")
+                .pattern("rrr")
+                .define('r', Blocks.HONEYCOMB_BLOCK)
+                .unlockedBy(Blocks.HONEYCOMB_BLOCK.toString(), has(Blocks.HONEYCOMB_BLOCK))
+                .save(this.output);
+
+        // Honeycomb Trapdoor
+        ShapedRecipeBuilder.shaped(this.items, RecipeCategory.MISC, ModBlocks.HONEYCOMB_TRAPDOOR.get(),1)
+                .pattern("rrr")
+                .pattern("rrr")
+                .define('r', Blocks.HONEYCOMB_BLOCK)
+                .unlockedBy(Blocks.HONEYCOMB_BLOCK.toString(), has(Blocks.HONEYCOMB_BLOCK))
+                .save(this.output);
+
+
 //  SHAPELESS RECIPES
         // Raddite
         ShapelessRecipeBuilder.shapeless(this.items, RecipeCategory.MISC, ModItems.RADDITE.get(), 9)
@@ -115,25 +142,55 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
 //  STONECUTTER RECIPES
+        // Honeycomb Slab
+        easyStonecutting(Blocks.HONEYCOMB_BLOCK, ModBlocks.HONEYCOMB_SLAB.get(), "honeycomb_slab_from_stonecutting_honeycomb_block");
+
         // Honeycomb Stairs
+        easyStonecutting(Blocks.HONEYCOMB_BLOCK, ModBlocks.HONEYCOMB_STAIRS.get(), "honeycomb_stairs_from_stonecutting_honeycomb_block");
+
+        // Honeycomb Trapdoor
+        easyStonecutting(Blocks.HONEYCOMB_BLOCK, ModBlocks.HONEYCOMB_TRAPDOOR.get(), "honeycomb_trapdoor_from_stonecutting_honeycomb_block");
 
 
 //  SMELTING RECIPES
         // Raddite from smelting Raw Raddite
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(
-                ModItems.RAW_RADDITE.get()), RecipeCategory.MISC,
-                ModItems.RAW_RADDITE.get(), 0.45f, 200)
-                .unlockedBy(ModItems.RAW_RADDITE.get().toString(), has(ModItems.RAW_RADDITE.get()))
-                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_smelting_raw_raddite");
+        easySmelting(ModItems.RAW_RADDITE.get(), ModItems.RADDITE.get(), "raddite_from_smelting_raw_raddite");
+
+        // Raddite from smelting Raddite Ore
+        easySmelting(ModBlocks.RADDITE_ORE.get(), ModItems.RADDITE.get(), "raddite_from_smelting_raddite_ore");
+
+        // Raddite from smelting Deepslate Raddite Ore
+        easySmelting(ModBlocks.DEEPSLATE_RADDITE_ORE.get(), ModItems.RADDITE.get(), "raddite_from_smelting_deepslate_raddite_ore");
 
 
 //  BLASTING RECIPES
         // Raddite from blasting Raw Raddite
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(
-                ModItems.RAW_RADDITE.get()), RecipeCategory.MISC,
-                ModItems.RAW_RADDITE.get(), 0.45f, 100)
-                .unlockedBy(ModItems.RAW_RADDITE.get().toString(), has(ModItems.RAW_RADDITE.get()))
-                .save(this.output, RandomStuffsMain.MODID + ":raddite_from_blasting_raw_raddite");
+        easyBlasting(ModItems.RAW_RADDITE.get(), ModItems.RADDITE.get(), "raddite_from_blasting_raw_raddite");
+
+        // Raddite from blasting Raddite Ore
+        easyBlasting(ModBlocks.RADDITE_ORE.get(), ModItems.RADDITE.get(), "raddite_from_blasting_raddite_ore");
+
+        // Raddite from blasting Deepslate Raddite Ore
+        easyBlasting(ModBlocks.DEEPSLATE_RADDITE_ORE.get(), ModItems.RADDITE.get(), "raddite_from_blasting_deepslate_raddite_ore");
+    }
+
+
+    protected void easyStonecutting(ItemLike pIngredient, ItemLike pOutput, String recipeName) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(pIngredient), RecipeCategory.BUILDING_BLOCKS, pOutput)
+                .unlockedBy(pIngredient.toString(), has(pIngredient))
+                .save(this.output, RandomStuffsMain.MODID + ":" + recipeName);
+    }
+
+    protected void easySmelting(ItemLike pIngredient, ItemLike pOutput, String recipeName) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(pIngredient), RecipeCategory.MISC, pOutput, 0.7f, 200)
+                .unlockedBy(pIngredient.toString(), has(pIngredient))
+                .save(this.output, RandomStuffsMain.MODID + ":" + recipeName);
+    }
+
+    protected void easyBlasting(ItemLike pIngredient, ItemLike pOutput, String recipeName) {
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(pIngredient), RecipeCategory.MISC, pOutput, 0.7f, 100)
+                .unlockedBy(pIngredient.toString(), has(pIngredient))
+                .save(this.output, RandomStuffsMain.MODID + ":" + recipeName);
     }
 
 
