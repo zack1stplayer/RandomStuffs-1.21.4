@@ -6,6 +6,7 @@ import cool.zack1stplayer.RandomStuffs.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -23,5 +24,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.ENERGIZED_FUEL)
                 .add(ModItems.ENERGIZED_COAL.get())
                 .add(ModItems.ENERGIZED_CHARCOAL.get());
+
+        tag(ModTags.Items.ENERGIZABLE)
+                .add(Items.COAL)
+                .add(Items.CHARCOAL);
     }
 }

@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -29,8 +30,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RADDITE_ORE.get());
         this.createTrivialCube(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
-        this.createTrivialBlock(ModBlocks.ENERGIZER.get(), TexturedModel.CUBE_TOP_BOTTOM);
-
+        createEnergizer();
 
         // VANILLA ALT BLOCKS
         this.family(Blocks.HONEYCOMB_BLOCK)
@@ -88,6 +88,19 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.registerSimpleItemModel(block, resourcelocation1);
     }
 
+    private void createEnergizer() {
+        this.createTrivialBlock(ModBlocks.ENERGIZER.get(), TexturedModel.CUBE_TOP_BOTTOM);
+    }
+
+    /*protected static BlockStateGenerator createBlockWithBinaryBlockState(Block block, BooleanProperty blockState, ResourceLocation resourceLocationTrue, ResourceLocation resourceLocationFalse) {
+        return MultiVariantGenerator.multiVariant(block).with(createBooleanModelDispatch(blockState, resourceLocationTrue, resourceLocationFalse)
+        );
+    }
+
+    protected static void createBlockWithBinaryBlockState(Block block, BooleanProperty blockState, ResourceLocation resourceLocation) {
+        TextureMapping textureMapping = TextureMapping.defaultTexture(resourceLocation.withPrefix("block/"));
+    }*/
+
     protected ModBlockModelGenerators.ModBlockFamilyProvider family(Block block) {
         return new ModBlockModelGenerators.ModBlockFamilyProvider(block);
     }
@@ -98,7 +111,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
 
         public ModBlockFamilyProvider(Block block) {
             super(TexturedModel.CUBE.get(block).getMapping());
-            fullBlock = BuiltInRegistries.BLOCK.getKey(block);
+            fullBlock = BuiltInRegistries.BLOCK.getKey(block).withPrefix("block/");
         }
 
         @Override

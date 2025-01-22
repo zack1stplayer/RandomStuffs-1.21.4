@@ -19,6 +19,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> ENERGIZED_FUEL = createTag("energized_fuel");
+        public static final TagKey<Item> ENERGIZABLE = createTag("energizable");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RandomStuffsMain.MODID, name));
