@@ -18,6 +18,8 @@ public class ModItemModelGenerators extends ItemModelGenerators {
     public void run() {
         this.generateFlatItem(ModItems.CHISEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.GROWTH_WAND.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.BLOCK_LINKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
         this.generateFlatItem(ModItems.RADDITE_LONGSWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         this.generateFlatItem(ModItems.RADDITE.get(), ModelTemplates.FLAT_ITEM);

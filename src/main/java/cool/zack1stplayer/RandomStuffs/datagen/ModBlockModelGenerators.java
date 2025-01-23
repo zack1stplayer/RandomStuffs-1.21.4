@@ -1,6 +1,8 @@
 package cool.zack1stplayer.RandomStuffs.datagen;
 
+import cool.zack1stplayer.RandomStuffs.block.ModBlockStateProperties;
 import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
+import cool.zack1stplayer.RandomStuffs.datagen.data.ModTextureMapping;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.*;
@@ -30,7 +32,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RADDITE_ORE.get());
         this.createTrivialCube(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
-        createEnergizer();
+        createBottomTopConditional(ModBlocks.ENERGIZER.get(), ModBlockStateProperties.ENERGIZING, "_energizing");
 
         // VANILLA ALT BLOCKS
         this.family(Blocks.HONEYCOMB_BLOCK)
@@ -88,8 +90,14 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.registerSimpleItemModel(block, resourcelocation1);
     }
 
-    private void createEnergizer() {
-        this.createTrivialBlock(ModBlocks.ENERGIZER.get(), TexturedModel.CUBE_TOP_BOTTOM);
+    private void createBottomTopConditional(Block block, BooleanProperty booleanProperty, String variantSuffix) {
+        TextureMapping texturemapping = TextureMapping.cubeBottomTop(block);
+        ResourceLocation resourcelocation = ModelTemplates.CUBE_BOTTOM_TOP.create(block, texturemapping, this.modelOutput);
+        ResourceLocation resourcelocation1 = this.createSuffixedVariant(block, variantSuffix, ModelTemplates.CUBE_BOTTOM_TOP, ModTextureMapping::cubeBottomTop);
+        this.blockStateOutput
+                .accept(MultiVariantGenerator.multiVariant(block)
+                        .with(createBooleanModelDispatch(booleanProperty, resourcelocation1, resourcelocation)));
+        this.registerSimpleItemModel(block, resourcelocation);
     }
 
     /*protected static BlockStateGenerator createBlockWithBinaryBlockState(Block block, BooleanProperty blockState, ResourceLocation resourceLocationTrue, ResourceLocation resourceLocationFalse) {

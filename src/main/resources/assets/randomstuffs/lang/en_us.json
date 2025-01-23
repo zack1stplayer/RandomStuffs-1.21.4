@@ -25,5 +25,9 @@
   "item.randomstuffs.energizer": "Energizer",
   "tooltip.randomstuffs.energizer": "Energize Coal by throwing it on top and waiting!",
 
+
+  "item.randomstuffs.block_linker": "Block Linker",
+  "tooltip.randomstuffs.block_linker.saved_coordinate": "Saved coordinates:",
+
   "creativetab.randomstuffs.randdomstuffs_items": "Random Stuffs"
 }

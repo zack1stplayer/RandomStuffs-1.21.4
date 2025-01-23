@@ -47,7 +47,7 @@ public class ChiselItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(@NotNull UseOnContext pContext) {
+    public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
         Block clickedBlock = level.getBlockState(pContext.getClickedPos()).getBlock();
 

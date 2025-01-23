@@ -1,12 +1,19 @@
 package cool.zack1stplayer.RandomStuffs.item;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.item.custom.BlockLinkerItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.ChiselItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.FuelItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.GrowthItem;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -44,9 +51,18 @@ public class ModItems {
     );
 
     public static final RegistryObject<Item> RADDITE_LONGSWORD = ITEMS.register("raddite_longsword",
-            () -> new Item(new Item.Properties()
+            () -> new SwordItem(ToolMaterial.IRON, 3.5f, -2.4f, new Item.Properties()
                     .setId(ITEMS.key("raddite_longsword"))
-                    .equippable(EquipmentSlot.byName("mainhand"))
+                    .attributes(ItemAttributeModifiers.builder()
+                            .add(Attributes.BLOCK_INTERACTION_RANGE,
+                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("base_block_interaction_range"),
+                                            0.5f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .add(Attributes.ENTITY_INTERACTION_RANGE,
+                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("base_entity_interaction_range"),
+                                            0.5f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND).build())
+//                    .equippable(EquipmentSlot.byName("mainhand"))
             )
     );
 
@@ -61,6 +77,13 @@ public class ModItems {
             () ->new GrowthItem(new Item.Properties()
                     .setId(ITEMS.key("growth_wand"))
                     .durability(250)
+            )
+    );
+
+    public static final RegistryObject<Item> BLOCK_LINKER = ITEMS.register("block_linker",
+            () ->new BlockLinkerItem(new Item.Properties()
+                    .setId(ITEMS.key("block_linker"))
+                    .stacksTo(1)
             )
     );
 

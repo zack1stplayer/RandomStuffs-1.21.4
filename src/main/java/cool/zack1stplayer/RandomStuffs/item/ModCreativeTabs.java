@@ -36,6 +36,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.RADDITE_LONGSWORD.get());
                         output.accept(ModItems.CHISEL.get());
                         output.accept(ModItems.GROWTH_WAND.get());
+                        output.accept(ModItems.BLOCK_LINKER.get());
 
 
                         // VANILLA ALT ITEMS

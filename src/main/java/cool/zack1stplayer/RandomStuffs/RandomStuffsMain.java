@@ -2,6 +2,7 @@ package cool.zack1stplayer.RandomStuffs;
 
 import com.mojang.logging.LogUtils;
 import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
+import cool.zack1stplayer.RandomStuffs.component.ModDataComponentTypes;
 import cool.zack1stplayer.RandomStuffs.item.ModCreativeTabs;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -36,10 +37,6 @@ public class RandomStuffsMain {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-//        BLOCKS.register(modEventBus);
-//        ITEMS.register(modEventBus);
-//        CREATIVE_MODE_TABS.register(modEventBus);
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -49,9 +46,11 @@ public class RandomStuffsMain {
         ModBlocks.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         ModCreativeTabs.register(modEventBus);
+        // Register the Deferred Register to the mod event bus so data components get registered
+        ModDataComponentTypes.register(modEventBus);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+//        modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
