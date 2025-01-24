@@ -41,6 +41,9 @@ public class DataGenerators {
         // Block & Item Models
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
 
+        // Datapacks
+        generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
+
 
         // Legacy Item Models
 //        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
