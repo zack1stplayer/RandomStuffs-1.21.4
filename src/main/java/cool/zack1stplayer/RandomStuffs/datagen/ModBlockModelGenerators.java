@@ -2,6 +2,7 @@ package cool.zack1stplayer.RandomStuffs.datagen;
 
 import cool.zack1stplayer.RandomStuffs.block.ModBlockStateProperties;
 import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
+import cool.zack1stplayer.RandomStuffs.block.custom.CottonCropBlock;
 import cool.zack1stplayer.RandomStuffs.datagen.data.ModTextureMapping;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
@@ -33,6 +34,8 @@ public class ModBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.DEEPSLATE_RADDITE_ORE.get());
 
         createBottomTopConditional(ModBlocks.ENERGIZER.get(), ModBlockStateProperties.ENERGIZING, "_energizing");
+
+        createCropBlock(ModBlocks.COTTON_CROP.get(), CottonCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
 
         // VANILLA ALT BLOCKS
         this.family(Blocks.HONEYCOMB_BLOCK)

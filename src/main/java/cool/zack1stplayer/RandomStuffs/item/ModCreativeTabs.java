@@ -38,6 +38,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.GROWTH_WAND.get());
                         output.accept(ModItems.BLOCK_LINKER.get());
 
+                        output.accept(ModItems.COTTON_SEEDS.get());
+                        output.accept(ModItems.COTTON_BOLL.get());
+
 
                         // VANILLA ALT ITEMS
                         output.accept(ModBlocks.HONEYCOMB_STAIRS.get());

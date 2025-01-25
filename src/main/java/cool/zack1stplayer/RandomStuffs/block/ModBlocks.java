@@ -1,6 +1,7 @@
 package cool.zack1stplayer.RandomStuffs.block;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.block.custom.CottonCropBlock;
 import cool.zack1stplayer.RandomStuffs.block.custom.EnergizerBlock;
 import cool.zack1stplayer.RandomStuffs.block.custom.MusicalBlock;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -48,8 +50,8 @@ public class ModBlocks {
                     .strength(3f, 3f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
-                    .lightLevel(p_220871_ -> 3)
                     .mapColor(MapColor.STONE)
+                    .lightLevel(p_220871_ -> 3)
             )
     );
 
@@ -59,8 +61,20 @@ public class ModBlocks {
                     .strength(4.5f, 3f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE)
-                    .lightLevel(p_220871_ -> 3)
                     .mapColor(MapColor.DEEPSLATE)
+                    .lightLevel(p_220871_ -> 3)
+            )
+    );
+
+    public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton_crop",
+            () -> new CottonCropBlock(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("cotton_crop"))
+                    .mapColor(blockState -> blockState.getValue(CottonCropBlock.AGE) >= 6 ? MapColor.QUARTZ : MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
             )
     );
 

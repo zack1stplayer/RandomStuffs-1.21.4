@@ -5,12 +5,16 @@
   "item.randomstuffs.raddite": "Raddite",
 
   "item.randomstuffs.raddite_longsword": "Raddite Longsword",
-  "item.randomstuffs.chisel": "Chisel",
-  "item.randomstuffs.growth_wand": "Growth Wand",
 
   "item.randomstuffs.raddite_block": "Raddite Block",
   "item.randomstuffs.raddite_ore": "Raddite Ore",
   "item.randomstuffs.deepslate_raddite_ore": "Deepslate Raddite Ore",
+
+  "item.randomstuffs.chisel": "Chisel",
+  "item.randomstuffs.growth_wand": "Growth Wand",
+
+  "item.randomstuffs.cotton_crop": "Cotton Seeds",
+  "item.randomstuffs.cotton_boll": "Cotton Boll",
 
 
   "item.randomstuffs.honeycomb_stairs": "Honeycomb Stairs",

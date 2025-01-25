@@ -16,16 +16,20 @@ public class ModItemModelGenerators extends ItemModelGenerators {
 
     @Override
     public void run() {
-        this.generateFlatItem(ModItems.CHISEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(ModItems.GROWTH_WAND.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(ModItems.BLOCK_LINKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-
-        this.generateFlatItem(ModItems.RADDITE_LONGSWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-
         this.generateFlatItem(ModItems.RADDITE.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.RAW_RADDITE.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.ENERGIZED_COAL.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.ENERGIZED_CHARCOAL.get(), ModelTemplates.FLAT_ITEM);
+
+        this.generateFlatItem(ModItems.RADDITE_LONGSWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        this.generateFlatItem(ModItems.CHISEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.GROWTH_WAND.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.BLOCK_LINKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
+//        this.generateFlatItem(ModItems.COTTON_SEEDS.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.COTTON_BOLL.get(), ModelTemplates.FLAT_ITEM);
+
 
         this.generateFlatItem(ModItems.EXAMPLE_ITEM.get(), ModelTemplates.FLAT_ITEM);
     }

@@ -1,23 +1,28 @@
 package cool.zack1stplayer.RandomStuffs.item;
 
 import cool.zack1stplayer.RandomStuffs.RandomStuffsMain;
+import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
 import cool.zack1stplayer.RandomStuffs.item.custom.BlockLinkerItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.ChiselItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.FuelItem;
 import cool.zack1stplayer.RandomStuffs.item.custom.GrowthItem;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -55,35 +60,47 @@ public class ModItems {
                     .setId(ITEMS.key("raddite_longsword"))
                     .attributes(ItemAttributeModifiers.builder()
                             .add(Attributes.BLOCK_INTERACTION_RANGE,
-                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("base_block_interaction_range"),
+                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("block_interaction_range"),
                                             0.5f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND)
                             .add(Attributes.ENTITY_INTERACTION_RANGE,
-                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("base_entity_interaction_range"),
+                                    new AttributeModifier(ResourceLocation.withDefaultNamespace("entity_interaction_range"),
                                             0.5f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND).build())
-//                    .equippable(EquipmentSlot.byName("mainhand"))
             )
     );
 
     public static final RegistryObject<Item> CHISEL = ITEMS.register("chisel",
-            () ->new ChiselItem(new Item.Properties()
+            () -> new ChiselItem(new Item.Properties()
                     .setId(ITEMS.key("chisel"))
                     .durability(250)
             )
     );
 
     public static final RegistryObject<Item> GROWTH_WAND = ITEMS.register("growth_wand",
-            () ->new GrowthItem(new Item.Properties()
+            () -> new GrowthItem(new Item.Properties()
                     .setId(ITEMS.key("growth_wand"))
                     .durability(250)
             )
     );
 
     public static final RegistryObject<Item> BLOCK_LINKER = ITEMS.register("block_linker",
-            () ->new BlockLinkerItem(new Item.Properties()
+            () -> new BlockLinkerItem(new Item.Properties()
                     .setId(ITEMS.key("block_linker"))
                     .stacksTo(1)
+            )
+    );
+
+    public static final RegistryObject<Item> COTTON_SEEDS = ITEMS.register("cotton_crop",
+            () -> new BlockItem(ModBlocks.COTTON_CROP.get(), new Item.Properties()
+                    .setId(ITEMS.key("cotton_crop"))
+                    .useItemDescriptionPrefix()
+            )
+    );
+
+    public static final RegistryObject<Item> COTTON_BOLL = ITEMS.register("cotton_boll",
+            () -> new Item(new Item.Properties()
+                    .setId(ITEMS.key("cotton_boll"))
             )
     );
 
@@ -100,8 +117,6 @@ public class ModItems {
                     )
             )
     );
-
-
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

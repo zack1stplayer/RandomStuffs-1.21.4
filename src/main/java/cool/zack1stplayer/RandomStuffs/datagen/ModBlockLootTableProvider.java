@@ -1,7 +1,9 @@
 package cool.zack1stplayer.RandomStuffs.datagen;
 
 import cool.zack1stplayer.RandomStuffs.block.ModBlocks;
+import cool.zack1stplayer.RandomStuffs.block.custom.CottonCropBlock;
 import cool.zack1stplayer.RandomStuffs.item.ModItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -16,6 +18,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -38,6 +42,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_RADDITE_ORE.get(),
                 block -> createMultiOreDrops(ModBlocks.DEEPSLATE_RADDITE_ORE.get(), ModItems.RAW_RADDITE.get(),
                         2.0f, 5.0f)
+        );
+
+        LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.COTTON_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CottonCropBlock.AGE, CottonCropBlock.MAX_AGE));
+        this.add(ModBlocks.COTTON_CROP.get(), this.createCropDrops(ModBlocks.COTTON_CROP.get(),
+                ModItems.COTTON_BOLL.get(), ModItems.COTTON_SEEDS.get(), lootItemConditionBuilder)
         );
 
         // VANILLA ALT BLOCKS
